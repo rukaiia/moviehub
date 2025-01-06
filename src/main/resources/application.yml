@@ -1,0 +1,37 @@
+
+server:
+  port: 8089
+spring:
+  application:
+    name: movie
+
+  mvc:
+    static-path-pattern: /static/**
+  freemarker:
+    expose-session-attributes: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/movietime
+    username: postgres
+    password: sugarmommy
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  liquibase:
+    change-log: classpath:/db/changelog/master.yml
+  mail:
+    host: smtp.gmail.com
+    username: res.pswd.attractor@gmail.com
+    password: udbj mooa cwid osgt
+    port: 587
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls.enable: true
+
+logging:
+  level:
+    root: info
+  file:
+    path: logs

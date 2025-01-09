@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - changeSet:
+      id: 6
+      author: Rukaiia
+      changes:
+        - addColumn:
+            tableName: movie
+            columns:
+              - column:
+                  name: image_path
+                  type: VARCHAR(255)

@@ -32,21 +32,30 @@ public class SecurityConfig {
                 .formLogin(form ->
                         form.loginPage("/auth/login")
                                 .loginProcessingUrl("/auth/login")
-                                .defaultSuccessUrl("/notes")
+                                .successHandler((request, response, authentication) -> {
+                                    boolean isAdmin = authentication.getAuthorities().stream()
+                                            .anyMatch(grantedAuthority -> grantedAuthority.getAuthority().equals("ROLE_ADMIN"));
+
+                                    if (isAdmin) {
+                                        response.sendRedirect("/admin");
+                                    } else {
+                                        response.sendRedirect("/movies");
+                                    }
+                                })
                                 .failureUrl("/auth/login?error=true")
-                                .permitAll())
+                                .permitAll()
+                )
                 .logout(logout -> logout
                         .logoutRequestMatcher(new AntPathRequestMatcher("/logout")).permitAll())
                 .authorizeHttpRequests(authorizeRequests -> authorizeRequests
-//                        .requestMatchers("/admin/register").permitAll()
                         .requestMatchers("/admin").hasAuthority("ROLE_ADMIN")
-                        .requestMatchers("/admin/adminposts").hasAuthority("ROLE_ADMIN")
-                        .requestMatchers("/news/create").hasAuthority("ROLE_ADMIN")
+                        .requestMatchers("/admin/delete").hasAuthority("ROLE_ADMIN")
+                        .requestMatchers("/admin/upload").hasAuthority("ROLE_ADMIN")
                         .requestMatchers("/news/delete").hasAuthority("ROLE_ADMIN")
                         .requestMatchers("/news").permitAll()
                         .requestMatchers("/notes").permitAll()
                         .requestMatchers("/auth/register").permitAll()
-                        .requestMatchers("/comment","/posts/delete").permitAll()
+                        .requestMatchers("/uploads/movies/uploads","/posts/delete").permitAll()
                         .requestMatchers("/posts/delete", "/profile","/posts/delete","/notes/edit", "/comment", "/notes/create").authenticated()
                         .anyRequest().permitAll()
                 );

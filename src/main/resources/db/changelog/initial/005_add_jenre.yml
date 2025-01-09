@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: your_username
+      changes:
+        - addColumn:
+            tableName: movie
+            columns:
+              - column:
+                  name: genre
+                  type: varchar(255)

@@ -1,38 +1,49 @@
-2025-01-09T22:48:39.203+06:00  INFO 12404 --- [movie] [main] com.example.movie.MovieApplication       : Starting MovieApplication using Java 21.0.2 with PID 12404 (C:\Users\User\Desktop\movie\target\classes started by User in C:\Users\User\Desktop\movie)
-2025-01-09T22:48:39.215+06:00  INFO 12404 --- [movie] [main] com.example.movie.MovieApplication       : No active profile set, falling back to 1 default profile: "default"
-2025-01-09T22:48:40.573+06:00  INFO 12404 --- [movie] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-01-09T22:48:40.643+06:00  INFO 12404 --- [movie] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 58 ms. Found 3 JPA repository interfaces.
-2025-01-09T22:48:41.462+06:00  INFO 12404 --- [movie] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8089 (http)
-2025-01-09T22:48:41.485+06:00  INFO 12404 --- [movie] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-01-09T22:48:41.486+06:00  INFO 12404 --- [movie] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
-2025-01-09T22:48:41.585+06:00  INFO 12404 --- [movie] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-01-09T22:48:41.587+06:00  INFO 12404 --- [movie] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2295 ms
-2025-01-09T22:48:41.907+06:00  INFO 12404 --- [movie] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-01-09T22:48:42.255+06:00  INFO 12404 --- [movie] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6c075e9d
-2025-01-09T22:48:42.258+06:00  INFO 12404 --- [movie] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-01-09T22:48:42.582+06:00  INFO 12404 --- [movie] [main] liquibase.database                       : Set default schema name to public
-2025-01-09T22:48:43.067+06:00  INFO 12404 --- [movie] [main] liquibase.changelog                      : Reading resource: db/changelog/initial/001_create_role.yml
-2025-01-09T22:48:43.086+06:00  INFO 12404 --- [movie] [main] liquibase.changelog                      : Reading resource: db/changelog/initial/002_create_users.yml
-2025-01-09T22:48:43.092+06:00  INFO 12404 --- [movie] [main] liquibase.changelog                      : Reading resource: db/changelog/initial/004_movie.yml
-2025-01-09T22:48:43.099+06:00  INFO 12404 --- [movie] [main] liquibase.changelog                      : Reading resource: db/changelog/initial/005_add_jenre.yml
-2025-01-09T22:48:43.105+06:00  INFO 12404 --- [movie] [main] liquibase.changelog                      : Reading resource: db/changelog/initial/006_add_column_movie.yml
-2025-01-09T22:48:43.224+06:00  INFO 12404 --- [movie] [main] liquibase.changelog                      : Reading from public.databasechangelog
-2025-01-09T22:48:43.304+06:00  INFO 12404 --- [movie] [main] liquibase.ui                             : Database is up to date, no changesets to execute
-2025-01-09T22:48:43.307+06:00  INFO 12404 --- [movie] [main] liquibase.changelog                      : Reading from public.databasechangelog
-2025-01-09T22:48:43.323+06:00  INFO 12404 --- [movie] [main] liquibase.util                           : UPDATE SUMMARY
-2025-01-09T22:48:43.324+06:00  INFO 12404 --- [movie] [main] liquibase.util                           : Run:                          0
-2025-01-09T22:48:43.324+06:00  INFO 12404 --- [movie] [main] liquibase.util                           : Previously run:               5
-2025-01-09T22:48:43.324+06:00  INFO 12404 --- [movie] [main] liquibase.util                           : Filtered out:                 0
-2025-01-09T22:48:43.325+06:00  INFO 12404 --- [movie] [main] liquibase.util                           : -------------------------------
-2025-01-09T22:48:43.325+06:00  INFO 12404 --- [movie] [main] liquibase.util                           : Total change sets:            5
-2025-01-09T22:48:43.327+06:00  INFO 12404 --- [movie] [main] liquibase.util                           : Update summary generated
-2025-01-09T22:48:43.359+06:00  INFO 12404 --- [movie] [main] liquibase.lockservice                    : Successfully released change log lock
-2025-01-09T22:48:43.361+06:00  INFO 12404 --- [movie] [main] liquibase.command                        : Command execution complete
-2025-01-09T22:48:43.470+06:00  INFO 12404 --- [movie] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-01-09T22:48:43.613+06:00  INFO 12404 --- [movie] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.4.Final
-2025-01-09T22:48:43.691+06:00  INFO 12404 --- [movie] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-01-09T22:48:44.282+06:00  INFO 12404 --- [movie] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-01-09T22:48:44.396+06:00  INFO 12404 --- [movie] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-01-13T06:53:16.819+06:00  WARN 15516 --- [movie] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=8h7m21s565ms819µs).
+2025-01-13T07:58:41.030+06:00  WARN 15516 --- [movie] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7m52s780ms229µs200ns).
+2025-01-13T16:26:22.360+06:00  WARN 15516 --- [movie] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7h48m43s861ms307µs500ns).
+2025-01-13T16:26:55.013+06:00  INFO 15516 --- [movie] [http-nio-8089-exec-10] c.e.m.service.AuthUserDetailsService     : user with email: r@r.comfound successfully
+2025-01-13T16:26:55.330+06:00  INFO 15516 --- [movie] [http-nio-8089-exec-2] c.e.m.service.AuthUserDetailsService     : user with email: r@r.comfound successfully
+2025-01-13T16:27:03.785+06:00  INFO 15516 --- [movie] [http-nio-8089-exec-6] c.e.m.service.AuthUserDetailsService     : user with email: r@r.comfound successfully
+2025-01-13T16:58:32.394+06:00  INFO 15516 --- [movie] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-13T16:58:32.476+06:00  INFO 15516 --- [movie] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-01-13T16:58:32.603+06:00  INFO 15516 --- [movie] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-13T16:58:32.719+06:00  INFO 15516 --- [movie] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-01-13T16:58:32.757+06:00  INFO 15516 --- [movie] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-01-13T16:58:51.950+06:00  INFO 18108 --- [movie] [main] com.example.movie.MovieApplication       : Starting MovieApplication using Java 21.0.2 with PID 18108 (C:\Users\User\Desktop\movie\target\classes started by User in C:\Users\User\Desktop\movie)
+2025-01-13T16:58:51.953+06:00  INFO 18108 --- [movie] [main] com.example.movie.MovieApplication       : No active profile set, falling back to 1 default profile: "default"
+2025-01-13T16:58:52.800+06:00  INFO 18108 --- [movie] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-13T16:58:52.861+06:00  INFO 18108 --- [movie] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 3 JPA repository interfaces.
+2025-01-13T16:58:53.449+06:00  INFO 18108 --- [movie] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8089 (http)
+2025-01-13T16:58:53.464+06:00  INFO 18108 --- [movie] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-01-13T16:58:53.464+06:00  INFO 18108 --- [movie] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-13T16:58:53.529+06:00  INFO 18108 --- [movie] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-01-13T16:58:53.529+06:00  INFO 18108 --- [movie] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1530 ms
+2025-01-13T16:58:53.681+06:00  INFO 18108 --- [movie] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-01-13T16:58:53.897+06:00  INFO 18108 --- [movie] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1e92c3b6
+2025-01-13T16:58:53.899+06:00  INFO 18108 --- [movie] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-01-13T16:58:54.087+06:00  INFO 18108 --- [movie] [main] liquibase.database                       : Set default schema name to public
+2025-01-13T16:58:54.407+06:00  INFO 18108 --- [movie] [main] liquibase.changelog                      : Reading resource: db/changelog/initial/001_create_role.yml
+2025-01-13T16:58:54.422+06:00  INFO 18108 --- [movie] [main] liquibase.changelog                      : Reading resource: db/changelog/initial/002_create_users.yml
+2025-01-13T16:58:54.430+06:00  INFO 18108 --- [movie] [main] liquibase.changelog                      : Reading resource: db/changelog/initial/004_movie.yml
+2025-01-13T16:58:54.434+06:00  INFO 18108 --- [movie] [main] liquibase.changelog                      : Reading resource: db/changelog/initial/005_add_jenre.yml
+2025-01-13T16:58:54.438+06:00  INFO 18108 --- [movie] [main] liquibase.changelog                      : Reading resource: db/changelog/initial/006_add_column_movie.yml
+2025-01-13T16:58:54.551+06:00  INFO 18108 --- [movie] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-01-13T16:58:54.634+06:00  INFO 18108 --- [movie] [main] liquibase.ui                             : Database is up to date, no changesets to execute
+2025-01-13T16:58:54.637+06:00  INFO 18108 --- [movie] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-01-13T16:58:54.651+06:00  INFO 18108 --- [movie] [main] liquibase.util                           : UPDATE SUMMARY
+2025-01-13T16:58:54.652+06:00  INFO 18108 --- [movie] [main] liquibase.util                           : Run:                          0
+2025-01-13T16:58:54.652+06:00  INFO 18108 --- [movie] [main] liquibase.util                           : Previously run:               5
+2025-01-13T16:58:54.652+06:00  INFO 18108 --- [movie] [main] liquibase.util                           : Filtered out:                 0
+2025-01-13T16:58:54.652+06:00  INFO 18108 --- [movie] [main] liquibase.util                           : -------------------------------
+2025-01-13T16:58:54.652+06:00  INFO 18108 --- [movie] [main] liquibase.util                           : Total change sets:            5
+2025-01-13T16:58:54.654+06:00  INFO 18108 --- [movie] [main] liquibase.util                           : Update summary generated
+2025-01-13T16:58:54.693+06:00  INFO 18108 --- [movie] [main] liquibase.lockservice                    : Successfully released change log lock
+2025-01-13T16:58:54.695+06:00  INFO 18108 --- [movie] [main] liquibase.command                        : Command execution complete
+2025-01-13T16:58:54.790+06:00  INFO 18108 --- [movie] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-13T16:58:54.902+06:00  INFO 18108 --- [movie] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-13T16:58:54.964+06:00  INFO 18108 --- [movie] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-01-13T16:58:55.303+06:00  INFO 18108 --- [movie] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-13T16:58:55.387+06:00  INFO 18108 --- [movie] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 16.3
@@ -40,17 +51,14 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-01-09T22:48:45.649+06:00  INFO 12404 --- [movie] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-01-09T22:48:45.702+06:00  INFO 12404 --- [movie] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-01-09T22:48:46.296+06:00  WARN 12404 --- [movie] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-01-09T22:48:46.319+06:00  INFO 12404 --- [movie] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name authUserDetailsService
-2025-01-09T22:48:47.169+06:00  INFO 12404 --- [movie] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8089 (http) with context path '/'
-2025-01-09T22:48:47.190+06:00  INFO 12404 --- [movie] [main] com.example.movie.MovieApplication       : Started MovieApplication in 8.771 seconds (process running for 11.481)
-2025-01-09T22:48:54.173+06:00  INFO 12404 --- [movie] [http-nio-8089-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-01-09T22:48:54.174+06:00  INFO 12404 --- [movie] [http-nio-8089-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-01-09T22:48:54.180+06:00  INFO 12404 --- [movie] [http-nio-8089-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
-2025-01-09T22:48:55.289+06:00  WARN 12404 --- [movie] [http-nio-8089-exec-3] o.s.web.servlet.PageNotFound             : No mapping for GET /favicon.ico
-2025-01-09T22:48:55.298+06:00  WARN 12404 --- [movie] [http-nio-8089-exec-3] o.s.web.servlet.PageNotFound             : No endpoint GET /favicon.ico.
-2025-01-09T22:49:02.025+06:00  INFO 12404 --- [movie] [http-nio-8089-exec-6] c.e.m.service.AuthUserDetailsService     : user with email: r@r.comfound successfully
-2025-01-09T22:49:13.776+06:00  WARN 12404 --- [movie] [http-nio-8089-exec-9] o.s.web.servlet.PageNotFound             : No mapping for GET /favicon.ico
-2025-01-09T22:49:13.778+06:00  WARN 12404 --- [movie] [http-nio-8089-exec-9] o.s.web.servlet.PageNotFound             : No endpoint GET /favicon.ico.
+2025-01-13T16:58:56.432+06:00  INFO 18108 --- [movie] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-13T16:58:56.475+06:00  INFO 18108 --- [movie] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-13T16:58:56.816+06:00  INFO 18108 --- [movie] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-01-13T16:58:57.376+06:00  WARN 18108 --- [movie] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-13T16:58:57.395+06:00  INFO 18108 --- [movie] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name authUserDetailsService
+2025-01-13T16:58:58.105+06:00  INFO 18108 --- [movie] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8089 (http) with context path '/'
+2025-01-13T16:58:58.113+06:00  INFO 18108 --- [movie] [main] com.example.movie.MovieApplication       : Started MovieApplication in 6.655 seconds (process running for 8.53)
+2025-01-13T16:59:03.631+06:00  INFO 18108 --- [movie] [http-nio-8089-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-13T16:59:03.632+06:00  INFO 18108 --- [movie] [http-nio-8089-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-01-13T16:59:03.633+06:00  INFO 18108 --- [movie] [http-nio-8089-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-01-13T16:59:11.426+06:00  INFO 18108 --- [movie] [http-nio-8089-exec-5] c.e.m.service.AuthUserDetailsService     : user with email: r@r.comfound successfully

@@ -41,6 +41,7 @@ public class MovieService {
     public List<Movie> findAll() {
         return movieRepository.findAll();
     }
+
     public List<Movie> findByQuery(String query) {
         if (query != null && !query.isEmpty()) {
             return movieRepository.findByTitleContaining(query);
@@ -49,7 +50,17 @@ public class MovieService {
 
     }
 
+    public List<String> getGenres() {
+        return movieRepository.findDistinctGenres();
+    }
 
+    public List<Movie> findByGenre(String genre) {
+        return movieRepository.findByGenre(genre);
+    }
 
+    public Movie findMovieById(Long id) {
+        return movieRepository.findById(id)
+                .orElse(null);
+    }
 }
 

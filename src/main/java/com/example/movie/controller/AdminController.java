@@ -110,6 +110,7 @@ public class AdminController {
         Files.deleteIfExists(filePath);
 
         movieService.deleteMovie(id);
+        
 
         return "redirect:/admin";
     }

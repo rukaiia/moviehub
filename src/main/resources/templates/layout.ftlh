@@ -26,7 +26,7 @@
         }
 
         .navbar {
-            background: linear-gradient(135deg, #6a1b9a, #d81b60);
+            background: linear-gradient(135deg, rgba(145, 7, 11, 0.33), #6c052b);
             backdrop-filter: blur(10px);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
@@ -52,19 +52,19 @@
         }
 
         .nav-link:hover {
-            color: #ff4081;
+            color: #540620;
             transform: scale(1.1);
         }
 
         .btn-outline-info {
-            border: 2px solid #ff4081;
-            color: #ff4081;
+            border: 2px solid #6c0427;
+            color: #730b2e;
             font-weight: 600;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         .btn-outline-info:hover {
-            background-color: #ff4081;
+            background-color: #540721;
             color: white;
         }
 
@@ -106,7 +106,7 @@
         }
 
         .btn-logout {
-            background-color: #ff4081;
+            background-color: #3f0418;
             color: white;
             padding: 8px 16px;
             border-radius: 50px;
@@ -116,7 +116,7 @@
         }
 
         .btn-logout:hover {
-            background-color: #ff80ab;
+            background-color: #860f37;
             transform: translateY(-3px);
         }
 

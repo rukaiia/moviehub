@@ -1,11 +1,12 @@
 package com.example.movie.model;
 
+
 import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
 @Data
-public class Movie {
+public class Episode {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,15 +15,10 @@ public class Movie {
     @Column(nullable = false)
     private String title;
 
-    @Column(length = 500)
-    private String description;
-
     @Column(nullable = false)
     private String filePath;
-    private String genre;
-    private String imagePath;
 
-
-
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "movie_id", nullable = false)
+    private Movie movie;
 }
-

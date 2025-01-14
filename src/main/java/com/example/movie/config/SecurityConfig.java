@@ -51,7 +51,7 @@ public class SecurityConfig {
                         .requestMatchers("/admin").hasAuthority("ROLE_ADMIN")
                         .requestMatchers("/admin/delete").hasAuthority("ROLE_ADMIN")
                         .requestMatchers("/admin/upload").hasAuthority("ROLE_ADMIN")
-                        .requestMatchers("/news/delete").hasAuthority("ROLE_ADMIN")
+                        .requestMatchers("/admin/movies/**").hasAuthority("ROLE_ADMIN")
                         .requestMatchers("/news").permitAll()
                         .requestMatchers("/notes").permitAll()
                         .requestMatchers("/auth/register").permitAll()

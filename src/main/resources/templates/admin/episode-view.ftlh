@@ -2,7 +2,7 @@
 <#import '../layout.ftlh' as layout>
 <@layout.layout; spring>
     <head>
-        <title>${movie.title}</title>
+        <title>${episode.title}</title>
         <style>
             * {
                 margin: 0;
@@ -52,7 +52,6 @@
                 animation: fadeIn 2s ease-in-out;
             }
 
-
             @keyframes fadeIn {
                 0% { opacity: 0; }
                 100% { opacity: 1; }
@@ -95,6 +94,7 @@
                 animation: fadeInText 2s ease-in-out;
             }
 
+            /* Анимация для описания */
             @keyframes fadeInText {
                 0% { opacity: 0; }
                 100% { opacity: 1; }
@@ -143,21 +143,15 @@
     </head>
 
     <body>
-    <div class="background"></div>
+    <main>
+        <video controls width="800">
+            <source src="/uploads/movies/${episode.filePath}" type="video/mp4">
+            Ваш браузер не поддерживает просмотр видео.
+        </video>
+    </main>
 
-    <h1>${movie.title}</h1>
-
-    <video controls>
-        <source src="/uploads/movies/${movie.filePath}" type="video/mp4">
-        Ваш браузер не поддерживает тег video.
-    </video>
-
-    <p style="font-size: 1rem; color: #ddd; line-height: 1.5; margin: 1rem auto; max-width: 80%; text-align: center;">
-        ${movie.description}
-    </p>
-
-    <a href="/admin" class="back-button">Назад к списку</a>
-
-
-    </body>
+    <footer>
+        <a href="/admin/${episode.movie.id}/episodes">Назад к сериям</a>
+    </footer>
 </@layout.layout>
+

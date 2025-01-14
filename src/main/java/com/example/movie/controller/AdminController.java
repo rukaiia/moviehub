@@ -1,8 +1,10 @@
 package com.example.movie.controller;
 
 import com.example.movie.dto.UserDto;
+import com.example.movie.model.Episode;
 import com.example.movie.model.Movie;
 
+import com.example.movie.service.EpisodeService;
 import com.example.movie.service.MovieService;
 import com.example.movie.service.UserService;
 import jakarta.validation.Valid;
@@ -14,12 +16,16 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
+import com.example.movie.dto.EpisodeDto;
+
 
 @Controller
 @RequestMapping("admin")
@@ -27,6 +33,7 @@ import java.util.UUID;
 public class AdminController {
     private final UserService userService;
     private final MovieService movieService;
+    private final EpisodeService episodeService;
     @GetMapping("/register")
     public String register(Model model) {
         model.addAttribute("userDto", new UserDto());
@@ -125,8 +132,84 @@ public class AdminController {
         model.addAttribute("query", query);
         return "admin/adminpage";
     }
+//    @GetMapping("/{id}/episodes")
+//    public String viewEpisodes(@PathVariable Long id, Model model) {
+//        Movie movie = movieService.findMovieById(id);
+//        if (movie == null) {
+//            return "redirect:/admin";
+//        }
+//
+//        List<Episode> episodes = episodeService.findEpisodesByMovie(movie);
+//        model.addAttribute("movie", movie);
+//        model.addAttribute("episodes", episodes);
+//
+//        return "admin/episode-list";
+//    }
+    @GetMapping("/movies/{movieId}/episodes")
+    public String getEpisodesByMovieId(@PathVariable Long movieId, Model model) {
+        List<Episode> episodes = episodeService.getEpisodesByMovieId(movieId);
+        model.addAttribute("episodes", episodes);
+        model.addAttribute("movieId", movieId);
+        return "admin/episode-list";
+    }
+
+    @GetMapping("/episodes/{episodeId}")
+    public String viewEpisode(@PathVariable Long episodeId, Model model) {
+        Episode episode = episodeService.getEpisodeById(episodeId);
+        if (episode == null) {
+            return "redirect:/admin";
+        }
+
+        model.addAttribute("episode", episode);
+
+        return "admin/episode-view";
+    }
+    @GetMapping("/movies/{movieId}/episodes/add")
+    public String showAddEpisodeForm(@PathVariable Long movieId, Model model) {
+        model.addAttribute("movieId", movieId);
+        model.addAttribute("episode", new EpisodeDto());
+        return "admin/add-episode";
+    }
+
+        @PostMapping("/{movieId}/episodes/add")
+        public String addEpisodeToMovie(@PathVariable Long movieId,
+                                        @RequestParam("title") String title,
+//                                        @RequestParam("description") String description,
+                                        @RequestParam("file") MultipartFile file) throws Exception {
+            String fileName = UUID.randomUUID() + "-" + file.getOriginalFilename();
+//            String imageName = UUID.randomUUID() + "-" + image.getOriginalFilename();
+
+            Path uploadDir = Paths.get("uploads/movies");
+            if (Files.notExists(uploadDir)) {
+                Files.createDirectories(uploadDir);
+            }
+            Path filePath = uploadDir.resolve(fileName);
+            Files.copy(file.getInputStream(), filePath);
+
+            Path imageDir = Paths.get("uploads/images");
+            if (Files.notExists(imageDir)) {
+                Files.createDirectories(imageDir);
+            }
+//            Path imagePath = imageDir.resolve(imageName);
+//            Files.copy(image.getInputStream(), imagePath);
+
+            Movie movie = movieService.getMovieById(movieId)
+                    .orElseThrow(() -> new RuntimeException("Movie not found"));
+
+            Episode episode = new Episode();
+            episode.setTitle(title);
+//            episode.setDescription(description);
+            episode.setFilePath(uploadDir.relativize(filePath).toString());
+//            episode.setImagePath(imageDir.relativize(imagePath).toString());
+            episode.setMovie(movie);
+
+            episodeService.saveEpisode(episode);
+
+            return "redirect:/admin/movies/" + movieId + "/episodes";
+        }
+    }
 
 
 
 
-}
+

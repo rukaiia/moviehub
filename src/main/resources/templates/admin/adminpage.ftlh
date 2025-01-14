@@ -119,6 +119,7 @@
                 box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
                 text-align: center;
                 width: 250px;
+                height: 400px;
                 transition: transform 0.3s ease, box-shadow 0.3s ease;
                 position: relative;
                 overflow: hidden;
@@ -126,14 +127,9 @@
                 animation: fadeInUp 0.5s ease forwards;
             }
 
-            .movie-item:hover {
-                transform: translateY(-10px);
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            }
-
             .movie-item img {
                 width: 100%;
-                height: 150px;
+                height: 200px;
                 object-fit: cover;
                 border-radius: 8px;
                 margin-bottom: 1rem;
@@ -147,16 +143,8 @@
                 margin-bottom: 1rem;
                 color: #fff;
                 text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
-            }
-
-            .movie-item h3 a {
-                color: inherit;
-                text-decoration: none;
-                transition: color 0.3s ease;
-            }
-
-            .movie-item h3 a:hover {
-                color: #440617;
+                height: 50px;
+                overflow: hidden;
             }
 
             .movie-item button {
@@ -173,6 +161,37 @@
                 left: 50%;
                 transform: translateX(-50%);
                 width: 90%;
+            }
+
+            .movie-item a {
+                display: inline-block;
+                margin-bottom: 1rem;
+                color: #ddd;
+                text-decoration: none;
+                font-weight: 600;
+            }
+
+            .movie-item a:hover {
+                color: #440617;
+            }
+
+
+            .movie-item form {
+                margin-top: 1rem;
+                position: relative;
+            }
+
+            .movie-item button {
+                background: #440223;
+                color: #fff;
+                padding: 0.8rem 1.5rem;
+                font-size: 1.1rem;
+                border: none;
+                border-radius: 10px;
+                cursor: pointer;
+                transition: background 0.3s ease;
+                width: 100%;
+                margin-top: 1rem;
             }
 
             .movie-item button:hover {
@@ -264,16 +283,19 @@
             <#if _csrf??>
                 <input type="hidden" name="${(_csrf.parameterName)!'csrf'}" value="${(_csrf.token)!'--no-token--'}"/>
             </#if>
-            <input type="text" name="query" placeholder="Search by title or genre" value="${query!}"/>
+            <input type="text" name="query" placeholder="Search movies by title or genre" value="${query!}"/>
             <button type="submit">Search</button>
         </form>
 
         <div class="movie-list">
             <#list movies as movie>
                 <div class="movie-item">
-                    <h3><a href="/admin/${movie.id}">${movie.title}</a></h3>
+                    <h3>${movie.title}</h3>
+                    <a href="/admin/movies/${movie.id}/episodes">
+                        <img src="/uploads/images/${movie.imagePath!'/default-image.jpg'}" alt="${movie.title}">
+                    </a>
 
-                    <img src="/uploads/images/${movie.imagePath!'/default-image.jpg'}" alt="${movie.title}">
+
                     <form action="/admin/delete/${movie.id}" method="post">
                         <#if _csrf??>
                             <input type="hidden" name="${(_csrf.parameterName)!'csrf'}" value="${(_csrf.token)!'--no-token--'}"/>
@@ -283,9 +305,12 @@
                 </div>
             </#list>
         </div>
+    </div>
 
-        <a href="/admin/upload" class="upload-link">Upload New Movie</a>
+    <a href="/admin/upload" class="upload-link">Upload New Movie</a>
     </div>
     </body>
 
 </@layout.layout>
+
+

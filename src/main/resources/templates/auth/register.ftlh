@@ -4,9 +4,9 @@
     <div class="container h-100 m-3">
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-xl-8 col-lg-10">
-                <h1 class="text-white mb-4 text-center">Регистрация</h1>
+                <h1 class="text-danger mb-4 text-center">Регистрация</h1>
                 <div class="card shadow-lg bg-dark" style="border-radius: 15px; overflow: hidden;">
-                    <div class="card-header text-center" style="background: linear-gradient(135deg, #2d3436, #0984e3); color: white;">
+                    <div class="card-header text-center" style="background: linear-gradient(135deg, #2d3436, #c0392b); color: white;">
                         <h2 class="my-3">Создайте аккаунт</h2>
                     </div>
                     <div class="card-body bg-dark">
@@ -20,10 +20,10 @@
                             <!-- Email Field -->
                             <div class="row align-items-center mb-4">
                                 <div class="col-md-3 text-md-end text-center">
-                                    <h6 class="mb-0 text-white">Email</h6>
+                                    <h6 class="mb-0 text-danger">Email</h6>
                                 </div>
                                 <div class="col-md-8">
-                                    <@spring.formInput path="userDto.email" attributes="id='form3Example3cg' class='form-control form-control-lg bg-dark text-white border-0 shadow-sm'" />
+                                    <@spring.formInput path="userDto.email" attributes="id='form3Example3cg' class='form-control form-control-lg bg-dark text-danger border-danger shadow-sm'" />
                                     <@spring.showErrors "<br>" "error text-danger" />
                                 </div>
                             </div>
@@ -31,17 +31,17 @@
                             <!-- Password Field -->
                             <div class="row align-items-center mb-4">
                                 <div class="col-md-3 text-md-end text-center">
-                                    <h6 class="mb-0 text-white">Пароль</h6>
+                                    <h6 class="mb-0 text-danger">Пароль</h6>
                                 </div>
                                 <div class="col-md-8">
-                                    <@spring.formInput path="userDto.password" attributes="id='form3Example4cg' class='form-control form-control-lg bg-dark text-white border-0 shadow-sm'" />
+                                    <@spring.formInput path="userDto.password" attributes="id='form3Example4cg' class='form-control form-control-lg bg-dark text-danger border-danger shadow-sm'" />
                                     <@spring.showErrors "<br>" "error text-danger" />
                                 </div>
                             </div>
 
                             <!-- Submit Button -->
                             <div class="text-center mt-4">
-                                <button type="submit" class="btn btn-primary btn-lg px-5" style="border-radius: 30px; background: #0984e3; border: none; transition: background-color 0.3s ease, transform 0.3s ease;">
+                                <button type="submit" class="btn btn-danger btn-lg px-5" style="border-radius: 30px; background: #c0392b; border: none; transition: background-color 0.3s ease, transform 0.3s ease;">
                                     Зарегистрироваться
                                 </button>
                             </div>
@@ -66,13 +66,13 @@
         }
 
         .card-header {
-            background: linear-gradient(135deg, #2d3436, #0984e3);
+            background: linear-gradient(135deg, #2d3436, #c0392b);
             color: #fff;
             transition: all 0.3s ease;
         }
 
         .card-header:hover {
-            background: linear-gradient(135deg, #0984e3, #74b9ff);
+            background: linear-gradient(135deg, #c0392b, #e74c3c);
             transform: scale(1.05);
         }
 
@@ -82,22 +82,22 @@
             border-radius: 0 0 15px 15px;
         }
 
-        /*.form-control {*/
-        /*    background-color: #1e272e;*/
-        /*    color: #dfe6e9;*/
-        /*    border: 1px solid #7f8c8d;*/
-        /*    border-radius: 8px;*/
-        /*    transition: border-color 0.3s ease, box-shadow 0.3s ease;*/
-        /*}*/
+        .form-control {
+            background-color: #1e272e;
+            color: #dfe6e9;
+            border: 1px solid #c0392b;
+            border-radius: 8px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
 
-        /*.form-control:focus {*/
-        /*    border-color: #0984e3;*/
-        /*    box-shadow: 0 0 8px rgba(3, 102, 214, 0.5);*/
-        /*    outline: none;*/
-        /*}*/
+        .form-control:focus {
+            border-color: #e74c3c;
+            box-shadow: 0 0 8px rgba(231, 76, 60, 0.5);
+            outline: none;
+        }
 
-        .btn-primary {
-            background-color: #0984e3;
+        .btn-danger {
+            background-color: #c0392b;
             border: none;
             font-size: 18px;
             font-weight: bold;
@@ -106,19 +106,16 @@
             transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
-        .btn-primary:hover {
-            background-color: #74b9ff;
+        .btn-danger:hover {
+            background-color: #e74c3c;
             transform: translateY(-3px);
         }
-
-
 
         .container {
             animation: fadeIn 0.7s ease-in-out;
         }
 
         @keyframes fadeIn {
-
             from {
                 opacity: 0;
             }
@@ -132,7 +129,7 @@
                 width: 100%;
             }
 
-            .btn-primary {
+            .btn-danger {
                 font-size: 16px;
                 padding: 8px 25px;
             }

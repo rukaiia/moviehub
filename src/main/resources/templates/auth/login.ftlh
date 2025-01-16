@@ -1,26 +1,25 @@
 <#import '../layout.ftlh' as layout>
 <@layout.layout ; spring>
 
-    <section class="d-flex justify-content-center align-items-center" style="background: linear-gradient(135deg, #2d3436, #0984e3); height: 100vh; padding: 0;">
+    <section class="d-flex justify-content-center align-items-center" style="background: linear-gradient(135deg, #400202, #6e0606); height: 100vh; padding: 0;">
 
         <style>
             body {
                 font-family: 'Roboto', sans-serif;
-                background: linear-gradient(135deg, #2d3436, #0984e3);
-                color: #dfe6e9;
+                background: linear-gradient(135deg, #400202, #6e0606);
+                color: #e0d4d9;
                 margin: 0;
                 padding: 0;
             }
 
             .card {
                 width: 100%;
-
                 max-width: 500px;
                 border-radius: 1.2rem;
-                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
                 overflow: hidden;
                 border: none;
-                background-color: #1e272e;
+                background-color: #2e0202;
                 animation: fadeIn 1s ease-out;
             }
 
@@ -39,25 +38,25 @@
                 left: 15px;
                 font-size: 1rem;
                 font-weight: 600;
-                color: #aaa;
+                color: #bfbfbf;
                 transition: 0.3s ease all;
             }
 
             .form-control {
                 border-radius: 1.5rem;
-                border: 1px solid #444;
+                border: 1px solid #4e0404;
                 padding: 1.2rem 1.5rem;
                 font-size: 1rem;
                 width: 100%;
                 transition: border-color 0.3s ease, box-shadow 0.3s ease;
-                background-color: #2f3542;
-                color: #dfe6e9;
+                background-color: #500202;
+                color: #e0d4d9;
             }
 
             .form-control:focus {
-                border-color: #0984e3;
-                box-shadow: 0 0 10px rgba(0, 123, 255, 0.2);
-                background-color: #1e272e;
+                border-color: #8e0b0b;
+                box-shadow: 0 0 10px rgba(142, 11, 11, 0.8);
+                background-color: #6a0202;
                 outline: none;
             }
 
@@ -66,24 +65,24 @@
                 padding: 0.9rem 3rem;
                 font-size: 1.1rem;
                 font-weight: 600;
-                transition: background-color 0.3s ease;
+                transition: background-color 0.3s ease, transform 0.2s;
                 width: auto;
+                color: #ffffff;
             }
 
             .btn-primary {
-                background-color: #0984e3;
+                background: linear-gradient(135deg, #920707, #570404);
                 border: none;
-                padding: 0.75rem 2.5rem;
             }
 
             .btn-primary:hover {
-                background-color: #74b9ff;
+                background: linear-gradient(135deg, #aa1010, #750505);
                 transform: translateY(-3px);
             }
 
             .forgot-password {
                 font-size: 0.9rem;
-                color: #74b9ff;
+                color: #aa1010;
                 text-decoration: none;
                 margin-top: 1rem;
                 display: inline-block;
@@ -91,6 +90,7 @@
 
             .forgot-password:hover {
                 text-decoration: underline;
+                color: #e01010;
             }
 
             @media (max-width: 992px) {
@@ -122,7 +122,7 @@
 
         <div class="card">
             <div class="card-body">
-                <h2 class="text-center mb-4" style="font-weight: 700; color: #dfe6e9;">Войти в аккаунт</h2>
+                <h2 class="text-center mb-4" style="font-weight: 700; color: #e8d7d9;">Войти в аккаунт</h2>
 
                 <form id="login-form" action="/auth/login" method="post">
 

@@ -148,6 +148,11 @@ public class AdminController {
     @GetMapping("/movies/{movieId}/episodes")
     public String getEpisodesByMovieId(@PathVariable Long movieId, Model model) {
         List<Episode> episodes = episodeService.getEpisodesByMovieId(movieId);
+        Movie movie = movieService.findMovieById(movieId);
+        model.addAttribute("movie", movie);
+
+        model.addAttribute("movieTitle", movie.getTitle());
+        model.addAttribute("movieDescription", movie.getDescription());
         model.addAttribute("episodes", episodes);
         model.addAttribute("movieId", movieId);
         return "admin/episode-list";
@@ -155,21 +160,39 @@ public class AdminController {
 
     @GetMapping("/episodes/{episodeId}")
     public String viewEpisode(@PathVariable Long episodeId, Model model) {
-        Episode episode = episodeService.getEpisodeById(episodeId);
-        if (episode == null) {
+        Episode currentEpisode = episodeService.getEpisodeById(episodeId);
+
+        if (currentEpisode == null) {
             return "redirect:/admin";
         }
 
-        model.addAttribute("episode", episode);
+        List<Episode> allEpisodes = episodeService.findAll();
+
+        int currentIndex = allEpisodes.indexOf(currentEpisode);
+
+        Episode previousEpisode = (currentIndex > 0) ? allEpisodes.get(currentIndex - 1) : null;
+        Episode nextEpisode = (currentIndex < allEpisodes.size() - 1) ? allEpisodes.get(currentIndex + 1) : null;
+
+        model.addAttribute("episode", currentEpisode);
+        model.addAttribute("previousEpisode", previousEpisode);
+        model.addAttribute("nextEpisode", nextEpisode);
 
         return "admin/episode-view";
     }
+
+
     @GetMapping("/movies/{movieId}/episodes/add")
     public String showAddEpisodeForm(@PathVariable Long movieId, Model model) {
+        Movie movie = movieService.findMovieById(movieId);
+
+        model.addAttribute("movieTitle", movie.getTitle());
+
         model.addAttribute("movieId", movieId);
         model.addAttribute("episode", new EpisodeDto());
+
         return "admin/add-episode";
     }
+
 
         @PostMapping("/{movieId}/episodes/add")
         public String addEpisodeToMovie(@PathVariable Long movieId,

@@ -163,17 +163,17 @@
 
                 <div class="navigation">
                     <#if previousEpisode?? && previousEpisode.movie.id == episode.movie.id>
-                        <a href="/admin/episodes/${previousEpisode.id}" class="prev-episode">Предыдущая серия</a>
+                        <a href="/movies/episodes/${previousEpisode.id}" class="prev-episode">Предыдущая серия</a>
                     </#if>
 
                     <#if nextEpisode?? && nextEpisode.movie.id == episode.movie.id>
-                        <a href="/admin/episodes/${nextEpisode.id}" class="next-episode">Следующая серия</a>
+                        <a href="/movies/episodes/${nextEpisode.id}" class="next-episode">Следующая серия</a>
                     </#if>
                 </div>
             </div>
 
             <div class="back-button-container">
-                <a href="/admin/movies/${episode.movie.id}/episodes" class="back-button">Назад к сериям</a>
+                <a href="/movies/${episode.movie.id}/episodes" class="back-button">Назад к сериям</a>
             </div>
         </main>
     </div>

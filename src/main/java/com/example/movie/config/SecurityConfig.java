@@ -27,7 +27,7 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED))
+                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.ALWAYS))
                 .httpBasic(Customizer.withDefaults())
                 .formLogin(form ->
                         form.loginPage("/auth/login")
@@ -52,6 +52,7 @@ public class SecurityConfig {
                         .requestMatchers("/admin/delete").hasAuthority("ROLE_ADMIN")
                         .requestMatchers("/admin/upload").hasAuthority("ROLE_ADMIN")
                         .requestMatchers("/admin/movies/**").hasAuthority("ROLE_ADMIN")
+
                         .requestMatchers("/news").permitAll()
                         .requestMatchers("/notes").permitAll()
                         .requestMatchers("/auth/register").permitAll()

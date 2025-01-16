@@ -92,56 +92,20 @@
             background-color: #fff;
         }
 
-        /* Позиционирование кнопок на странице */
-        .navbar-nav {
-            margin-left: auto;
-        }
 
-        /* Для кнопки Logout */
-        .logout-container {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            z-index: 10;
-        }
 
-        .btn-logout {
-            background-color: #3f0418;
-            color: white;
-            padding: 8px 16px;
-            border-radius: 50px;
-            font-weight: bold;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-
-        .btn-logout:hover {
-            background-color: #860f37;
-            transform: translateY(-3px);
-        }
-
-        /* Адаптивность для мобильных устройств */
         @media (max-width: 768px) {
             .navbar-brand {
                 font-size: 1.5rem;
             }
-            .nav-link {
-                font-size: 16px;
-            }
 
-            /* При мобильном разрешении кнопки могут располагаться вертикально */
-            .logout-container {
-                position: static;
-                margin-top: 20px;
-                text-align: center;
-            }
         }
     </style>
 
     <!-- Навигационная панель -->
     <nav class="navbar navbar-expand-lg fixed-top mb-4 shadow">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/movies">MovieHub</a>
+            <a class="navbar-brand" href="/movies">AnimeHub</a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"

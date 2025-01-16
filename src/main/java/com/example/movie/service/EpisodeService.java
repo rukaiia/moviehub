@@ -44,5 +44,8 @@ public class EpisodeService {
         episodeRepository.save(episode);
     }
 
+    public List<Episode> findAll() {
+        return episodeRepository.findAll();
+    }
 }
 

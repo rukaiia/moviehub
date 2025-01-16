@@ -115,11 +115,11 @@
             .movie-item {
                 background: rgba(0, 0, 0, 0.7);
                 padding: 1.5rem;
-                border-radius: 15px;
+                border-radius: 50%;
                 box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
                 text-align: center;
-                width: 250px;
-                height: 400px;
+                width: 280px;
+                height: 280px;
                 transition: transform 0.3s ease, box-shadow 0.3s ease;
                 position: relative;
                 overflow: hidden;
@@ -128,10 +128,10 @@
             }
 
             .movie-item img {
-                width: 100%;
-                height: 200px;
+                width: 150px;
+                height: 150px;
                 object-fit: cover;
-                border-radius: 8px;
+                border-radius: 50%;
                 margin-bottom: 1rem;
                 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
                 transition: transform 0.3s ease;
@@ -174,7 +174,6 @@
             .movie-item a:hover {
                 color: #440617;
             }
-
 
             .movie-item form {
                 margin-top: 1rem;
@@ -267,9 +266,17 @@
                 }
 
                 .movie-item img {
-                    height: 150px;
+                    width: 100%;
+                    height: 400px;
+                    object-fit: cover;
+                    border-radius: 8px;
+                    margin-bottom: 1rem;
+                    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+                    transition: transform 0.3s ease;
                 }
+
             }
+
         </style>
     </head>
 

@@ -100,7 +100,7 @@
             <#if episodes?size gt 0>
                 <#list episodes as episode>
                     <div class="episode-card">
-                        <a href="/admin/episodes/${episode.id}">
+                        <a href="/movies/episodes/${episode.id}">
                             ${episode.title}
                         </a>
                     </div>
@@ -111,8 +111,7 @@
         </div>
 
         <div class="button-group">
-            <a href="/admin/movies/${movieId}/episodes/add">Add New Episode</a>
-            <a href="/admin">Back to Movies</a>
+            <a href="/movies">Back to Movies</a>
         </div>
     </div>
     </body>
